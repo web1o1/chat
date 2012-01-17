@@ -1,0 +1,10 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:8080');
+  socket.emit('set nickname', navigator.appCodeName);
+  socket.on('ready', function (data) {
+    socket.on('clnt', function (clnt) {
+        console.log(clnt);
+    });
+  });
+</script>
