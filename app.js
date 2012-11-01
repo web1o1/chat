@@ -4,7 +4,7 @@ var express = require('express')
 
 app.use(app.router);
 app.use(express.static(__dirname + '/public'));
-app.listen(8080);
+app.listen(process.env.VMC_APP_PORT || 1337);
 
 app.get('/', function(req, res){
   res.sendfile(__dirname + '/index.html');
